@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="adsmore.profusion.com.adsmore">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter android:label="@string/app_name">
+                <!-- Deep Linking: Google to crawl your app content and allow users to enter your app from search results -->
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="*"
+                    android:scheme="grabdfp" />
+            </intent-filter>
+
+            <intent-filter android:label="@string/app_name">
+                <!-- Deep Linking: Google to crawl your app content and allow users to enter your app from search results -->
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://adsmore.co” -->
+                <data
+                    android:host="adsmore.co"
+                    android:scheme="http" />
+                <!-- note that the leading "/" is required for pathPrefix-->
+                <!-- Accepts URIs that begin with "example://gizmos”
+                <data android:scheme="example"
+                      android:host="gizmos" />
+                -->
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <!-- Deep Linking: Google to crawl your app content and allow users to enter your app from search results -->
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="adsmore.co"
+                    android:scheme="grabdfp" />
+                <!--<data android:scheme="grabdfp" />-->
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>
